@@ -42,6 +42,7 @@ const (
 	Date      DbaseDataType = 'D'
 	Numeric   DbaseDataType = 'N'
 	Float     DbaseDataType = 'F'
+	Memo      DbaseDataType = 'M'
 )
 
 func (ddt DbaseDataType) byte() byte {
@@ -57,6 +58,8 @@ func (ddt DbaseDataType) fixedFieldLength() byte {
 		return 1
 	case Date:
 		return 8
+	case Memo:
+		return 10
 	default:
 		return notApplicable
 	}
