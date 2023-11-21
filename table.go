@@ -457,7 +457,7 @@ func (dt *DbfTable) SetFieldValue(row int, fieldIndex int, value string) (err er
 
 	// write new value
 	switch dt.fields[fieldIndex].fieldType {
-	case Character, Logical, Date:
+	case Character, Logical, Date, Memo:
 		for i := 0; i < len(b) && i < fieldLength; i++ {
 			dt.dataStore[offset+recordOffset+i] = b[i]
 		}
